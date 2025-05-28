@@ -1,0 +1,28 @@
+---
+// I'd rather use this because clip-path is a pain to work with in CSS
+import "augmented-ui/augmented-ui.min.css";
+import "📱/styles/tailwind.css";
+import "📱/styles/animations.css";
+import SEO from "📱/components/SEO/SEO.astro";
+import Background from "📱/components/Background/bg.svelte";
+
+import { ClientRouter } from "astro:transitions";
+import { Font } from "astro:assets";
+---
+
+<html data-theme="Orv Window" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <ClientRouter />
+    <Font cssVariable="--font-orvconfig" preload />
+    <slot name="seo">
+      <SEO />
+    </slot>
+  </head>
+
+  <body class="font-orv text-glow">
+    <Background client:only="svelte">
+      <slot />
+    </Background>
+  </body>
+</html>
