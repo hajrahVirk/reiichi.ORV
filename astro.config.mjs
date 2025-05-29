@@ -10,8 +10,18 @@ import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import playformCompress from "@playform/compress";
 
+import cloudflare from "@astrojs/cloudflare";
+
 export default defineConfig({
   integrations: [svelte(), icon(), playformCompress({ Logger: 2 })],
+
+  vite: {
+    plugins: [tailwindcss()],
+    build: {
+      minify: false,
+    }
+  },
+
   experimental: {
     fonts: [
       {
@@ -51,7 +61,6 @@ export default defineConfig({
       },
     ],
   },
-  vite: {
-    plugins: [tailwindcss()],
-  },
+
+  adapter: cloudflare(),
 });
