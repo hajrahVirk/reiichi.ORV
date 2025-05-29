@@ -1,18 +1,17 @@
 {
-  "name": "Reichi",
+  "name": "pinkmin.ORV",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "deploy": "wrangler deploy",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.5.3",
     "@astrojs/svelte": "^7.0.4",
-    "@neodrag/svelte": "^2.3.1",
-    "@neodrag/vanilla": "^2.3.0",
-    "@playform/compress": "^0.1.9",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.0",
     "animejs": "^4.0.1",
@@ -26,10 +25,14 @@
     "svelte": "^5.19.3",
     "swiper": "^11.2.1",
     "tailwindcss": "^4.0.0",
-    "tailwindcss-animated": "^2.0.0",
-    "typescript": "^5.7.3"
+    "tailwindcss-animated": "^2.0.0"
   },
   "devDependencies": {
-    "@types/howler": "^2.2.12"
+    "@playform/compress": "^0.1.9",
+    "@types/howler": "^2.2.12",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "vitest": "^3.1.4",
+    "wrangler": "^4.17.0"
   }
 }
